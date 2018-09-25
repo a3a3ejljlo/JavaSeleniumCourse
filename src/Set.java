@@ -38,13 +38,13 @@ public class Set {
                 case 2:
                     if (setOfSweets.contains(candy)) {
                         setOfSweets.remove(candy);
-                        System.out.println("\n\tCandy успешно добавлен\n");
+                        System.out.println("\n\tCandy успешно удален\n");
                         break;
                     }
                 case 3:
                     if (setOfSweets.contains(jellybean)) {
                         setOfSweets.remove(jellybean);
-                        System.out.println("\n\tJellybean успешно добавлен\n");
+                        System.out.println("\n\tJellybean успешно удален\n");
                         break;
                     } else {
                         System.out.println("\n********************************" +

@@ -18,7 +18,7 @@ public class MainMenu {
                 "_____________________________________________________\n" +
                 "1. Chokolate\n" +
                 "2. Candy\n" +
-                "3. Chokolate\n");
+                "3. JellyBean\n");
     }
 
     public int numberPointOfMenu() {

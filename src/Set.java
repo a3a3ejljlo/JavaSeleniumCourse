@@ -31,7 +31,7 @@ public class Set {
             switch (id) {
                 case 1:
                     if (setOfSweets.contains(chokolate)) {
-                        setOfSweets.remove(setOfSweets.remove(chokolate));
+                        setOfSweets.remove(chokolate);
                         System.out.println("\n\tChokolate успешно удален\n");
                         break;
                     }
@@ -52,6 +52,10 @@ public class Set {
                                 "\n********************************");
                     }
             }
+        } else {
+            System.out.println("\n??????????????????????????????????" +
+                    "\nУкажите существующий пункт меню!!!!!" +
+                    "\n??????????????????????????????????");
         }
         return isGameover;
     }
@@ -61,16 +65,20 @@ public class Set {
         if (menu == 3) {
             double x = 0;
             double y = 0;
+            System.out.println(
+                    "\n\tИтоговая информация по составу набора: ");
             for (int i = 0; i < setOfSweets.size(); i++) {
                 x += setOfSweets.get(i).getPrice();
                 y += setOfSweets.get(i).getWeight();
+                System.out.println("\nНазвание: " + setOfSweets.get(i).getName() + "\nВес: " +
+                        setOfSweets.get(i).getWeight() + "\nЦена: " +
+                        setOfSweets.get(i).getPrice() + "\n");
             }
             System.out.println("\n**********************************************" +
                     "\nНабор весит " + y + " грамм");
             System.out.println("\nВ сумме получилось: " + x + " рублей");
 
-            System.out.println("\n\tИтоговая информация по составу набора = " + setOfSweets + "\n" +
-                    "\n**********************************************");
+
         } else if (menu == 4) {
             System.out.println("\n**********************************************" +
                     "\n**********************************************" +

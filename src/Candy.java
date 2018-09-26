@@ -4,7 +4,7 @@ public class Candy extends Sweets{
 
 
     public Candy() {
-        setName("Chokolate");
+        setName("Candy");
         setPrice(34.12);
         setWeight(200.10);
     }

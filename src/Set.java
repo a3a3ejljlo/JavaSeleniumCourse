@@ -1,7 +1,9 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Set {
     private ArrayList<Sweets> setOfSweets = new ArrayList<>();
+    public HashSet<Sweets> uniqueSweets = new HashSet<>(setOfSweets);
 
     private Chokolate chokolate = new Chokolate();
     private Jellybean jellybean = new Jellybean();
@@ -12,8 +14,22 @@ public class Set {
         for (int i = 0; i < countOfPosition; i++) {
             setOfSweets.add(sweets);
         }
-        System.out.println(MainMenu.LINE + countOfPosition + " шт " + sweets.getName() + " " 
+        System.out.println(MainMenu.LINE + countOfPosition + " шт " + sweets.getName() + " "
                 + MainMenu.POSITION_ADDED_SUCCESSFULLY);
+    }
+
+    public void deleteCountOfPosition(int countOfPosition, Sweets sweets) {
+        if (countOfPosition > (setOfSweets.lastIndexOf(sweets) + 1) && setOfSweets.size() != 0) {
+            System.out.println("Мы не можем удалить больше чем " + (setOfSweets.lastIndexOf(sweets) + 1) + " шт" + " " + sweets.getName());
+        }
+        if (countOfPosition <= (setOfSweets.lastIndexOf(sweets)) + 1) {
+            for (int i = 0; i < countOfPosition; i++) {
+                setOfSweets.remove(sweets);
+            }
+            System.out.println(MainMenu.LINE + countOfPosition + " шт " + sweets.getName() + " "
+                    + MainMenu.POSITION_REMOVED_SUCCESS);
+
+        }
     }
 
     boolean doInteractionWithPositions(int menu, int id, int count) {
@@ -30,29 +46,27 @@ public class Set {
                     break;
                 default:
                     System.out.println(MainMenu.POSITION_SORRY_MESSAGE);
+                    break;
             }
         } else if (menu == 2) {
             switch (id) {
                 case 1:
                     if (setOfSweets.contains(chokolate)) {
-                        setOfSweets.remove(chokolate);
-                        System.out.println(MainMenu.POSITION_REMOVED_SUCCESS);
+                        deleteCountOfPosition(count, chokolate);
                         break;
                     }
                 case 2:
                     if (setOfSweets.contains(candy)) {
-                        setOfSweets.remove(candy);
-                        System.out.println(MainMenu.POSITION_REMOVED_SUCCESS);
+                        deleteCountOfPosition(count, candy);
                         break;
                     }
                 case 3:
                     if (setOfSweets.contains(jellybean)) {
-                        setOfSweets.remove(jellybean);
-                        System.out.println(MainMenu.POSITION_REMOVED_SUCCESS);
+                        deleteCountOfPosition(count, jellybean);
                         break;
                     }
                 default:
-                    System.out.println(MainMenu.POSITION_SORRY_MESSAGE);
+                    mainMenu.showPositionSorryMessage();
             }
         } else {
             System.out.println(MainMenu.MAIN_MENU_SORRY_MESSAGE);

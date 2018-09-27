@@ -14,7 +14,7 @@ public class MainMenu {
     public static final String POSITION_MENU_3 = "\n3. JellyBean";
     public static final String POSITION_ADDED_SUCCESSFULLY = "добавилось в Ваш Новогодний набор! \nПродолжайте набирать сладости пока не лопнет пакет!";
     public static final String POSITION_SORRY_MESSAGE = "\n\tТаких позиций нет в меню выбора позиций";
-    public static final String POSITION_REMOVED_SUCCESS = "\n\tпозиция успешно удалена";
+    public static final String POSITION_REMOVED_SUCCESS = "удалено из Вашего Новогоднего набора!";
     public static final String MAIN_MENU_SORRY_MESSAGE = "\n??????????????????????????????????" +
             "\nУкажите существующий пункт меню!!!!!" +
             "\n??????????????????????????????????";
@@ -47,11 +47,15 @@ public class MainMenu {
                 POSITION_MENU_3+LINE);
     }
 
-    void showSorryMessage(){
+    public void showMenuSorryMessage(){
         System.out.println(STARS_LINE+MAIN_MENU_SORRY_MESSAGE+STARS_LINE);
     }
 
-    void showMenuInputCountOfPosition(){
+    public void showPositionSorryMessage(){
+        System.out.println(STARS_LINE+POSITION_SORRY_MESSAGE+STARS_LINE);
+    }
+
+    public void showMenuInputCountOfPosition(){
         System.out.println(LINE+COUNT_POSITION+LINE);
     }
 
@@ -62,10 +66,92 @@ public class MainMenu {
         return Integer.parseInt(s);
     }
 
+    public static String getMainMenuAdd() {
+        return MAIN_MENU_ADD;
+    }
+
+    public static String getMainMenuDelete() {
+        return MAIN_MENU_DELETE;
+    }
+
+    public static String getMainMenuTotal() {
+        return MAIN_MENU_TOTAL;
+    }
+
+    public static String getMainMenuExit() {
+        return MAIN_MENU_EXIT;
+    }
+
+    public static String getMainMenuTitle() {
+        return MAIN_MENU_TITLE;
+    }
+
+    public static String getMainMenuNeedAction() {
+        return MAIN_MENU_NEED_ACTION;
+    }
+
+    public static String getLINE() {
+        return LINE;
+    }
+
+    public static String getPositionMenuNeedAction() {
+        return POSITION_MENU_NEED_ACTION;
+    }
+
+    public static String getPositionMenu1() {
+        return POSITION_MENU_1;
+    }
+
+    public static String getPositionMenu2() {
+        return POSITION_MENU_2;
+    }
+
+    public static String getPositionMenu3() {
+        return POSITION_MENU_3;
+    }
+
+    public static String getPositionAddedSuccessfully() {
+        return POSITION_ADDED_SUCCESSFULLY;
+    }
+
+    public static String getPositionSorryMessage() {
+        return POSITION_SORRY_MESSAGE;
+    }
+
+    public static String getPositionRemovedSuccess() {
+        return POSITION_REMOVED_SUCCESS;
+    }
+
+    public static String getMainMenuSorryMessage() {
+        return MAIN_MENU_SORRY_MESSAGE;
+    }
+
+    public static String getTotalOfPosition() {
+        return TOTAL_OF_POSITION;
+    }
+
+    public static String getStarsLine() {
+        return STARS_LINE;
+    }
+
+    public static String getByeByeMessage() {
+        return BYE_BYE_MESSAGE;
+    }
+
+    public static String getCountPosition() {
+        return COUNT_POSITION;
+    }
+
+    public static void setCountPosition(String countPosition) {
+        COUNT_POSITION = countPosition;
+    }
+
     public int returnIdOfPosition() {
         Scanner scanner = new Scanner(System.in);
         String s = scanner.nextLine();
         return Integer.parseInt(s);
+
+
     }
 
     public int returnCountOfPosition() {

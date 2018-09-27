@@ -7,6 +7,9 @@ public abstract class Sweets {
 
     public abstract String returnSpecialValues();
 
+    public Sweets() {
+    }
+
     public Sweets(int id, String name, double weight, double price) {
         this.id = id;
         this.name = name;

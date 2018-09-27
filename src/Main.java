@@ -25,7 +25,13 @@ public class Main {
         while (!isGameover) {
             mainMenu.startGreeting();
             int menu = mainMenu.numberPointOfMenu();
-            if (menu == 1 || menu == 2) {
+            if (menu == 1) {
+                mainMenu.showLotOfPosition();
+                int id = mainMenu.returnIdOfPosition();
+                mainMenu.showMenuInputCountOfPosition();
+                int count = mainMenu.returnCountOfPosition();
+                isGameover = set.doInteractionWithPositions(menu, id, count);
+            } else if (menu == 2) {
                 mainMenu.showLotOfPosition();
                 int id = mainMenu.returnIdOfPosition();
                 mainMenu.showMenuInputCountOfPosition();
@@ -33,7 +39,9 @@ public class Main {
                 isGameover = set.doInteractionWithPositions(menu, id, count);
             } else if (menu == 3 || menu == 4) {
                 isGameover = set.setTotal(menu);
-            } else {mainMenu.showSorryMessage();}
+            } else {
+                mainMenu.showMenuSorryMessage();
+            }
         }
     }
 }

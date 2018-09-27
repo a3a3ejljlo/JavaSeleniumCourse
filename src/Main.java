@@ -20,17 +20,20 @@ public class Main {
         startGame(set, mainMenu, isGameover);
     }
 
+
     private static void startGame(Set set, MainMenu mainMenu, boolean isGameover) {
         while (!isGameover) {
             mainMenu.startGreeting();
             int menu = mainMenu.numberPointOfMenu();
-            if (menu < 3) {
+            if (menu == 1 || menu == 2) {
                 mainMenu.showLotOfPosition();
                 int id = mainMenu.returnIdOfPosition();
-                isGameover = set.setActivitu(menu, id);
-            } else if (menu >= 3 || menu < 1) {
+                mainMenu.showMenuInputCountOfPosition();
+                int count = mainMenu.returnCountOfPosition();
+                isGameover = set.doInteractionWithPositions(menu, id, count);
+            } else if (menu == 3 || menu == 4) {
                 isGameover = set.setTotal(menu);
-            }
+            } else {mainMenu.showSorryMessage();}
         }
     }
 }

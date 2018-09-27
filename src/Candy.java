@@ -1,11 +1,20 @@
-public class Candy extends Sweets{
-    int id = 2;
-    String color = "Yellow";
+public class Candy extends Sweets {
+    private String firm = "Nestle";
 
+    @Override
+    public String returnSpecialValues() {
+        return "\nФирма производителя: " + firm;
+    }
 
     public Candy() {
-        setName("Candy");
-        setPrice(34.12);
-        setWeight(200.10);
+        super(2, "Candy", 200.10, 34.12);
+    }
+
+    public String getFirm() {
+        return firm;
+    }
+
+    public void setFirm(String firm) {
+        this.firm = firm;
     }
 }

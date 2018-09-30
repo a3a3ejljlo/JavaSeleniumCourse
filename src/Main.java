@@ -1,5 +1,8 @@
+import javax.sound.midi.InvalidMidiDataException;
+import javax.sound.midi.MidiUnavailableException;
+
 public class Main {
-    public static void main(String[] args) throws ExeptionForThisProject {
+    public static void main(String[] args) throws ExeptionForThisProject, InvalidMidiDataException, MidiUnavailableException {
 
 /*  1) Формируется новогодний подарок.
 Он может включать в себя разные сладости (Candy, Jellybean, etc.)
@@ -13,13 +16,11 @@ public class Main {
 Подумать как задавать вес и стоимость.
 Как организовать данные.
 Как будет работать алгоритм*/
-
         Set set = new Set();
         MainMenu mainMenu = new MainMenu();
         boolean isGameover = false;
         startGameLogic(set, mainMenu, isGameover);
     }
-
 
     private static void startGameLogic(Set set, MainMenu mainMenu, boolean isGameover) throws ExeptionForThisProject {
         while (!isGameover) {
@@ -32,7 +33,9 @@ public class Main {
                     mainMenu.showMenuInputCountOfPosition();
                     int count = mainMenu.returnCountOfPosition();
                     set.doInteractionWithPositions(menu, id, count);
-                } else{mainMenu.showPositionSorryMessage();}
+                } else {
+                    mainMenu.showPositionSorryMessage();
+                }
             } else if (menu == 3) {
                 set.setTotal(menu);
             } else if (menu == 4) {

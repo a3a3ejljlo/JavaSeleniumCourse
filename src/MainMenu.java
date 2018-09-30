@@ -35,7 +35,7 @@ public class MainMenu {
                 MAIN_MENU_ADD +
                 MAIN_MENU_DELETE +
                 MAIN_MENU_TOTAL +
-                MAIN_MENU_EXIT+LINE);
+                MAIN_MENU_EXIT + LINE);
     }
 
     void showLotOfPosition() {
@@ -44,26 +44,31 @@ public class MainMenu {
                 LINE +
                 POSITION_MENU_1 +
                 POSITION_MENU_2 +
-                POSITION_MENU_3+LINE);
+                POSITION_MENU_3 + LINE);
     }
 
-    public void showMenuSorryMessage(){
-        System.out.println(STARS_LINE+MAIN_MENU_SORRY_MESSAGE+STARS_LINE);
+    public void showMenuSorryMessage() {
+        System.out.println(STARS_LINE + MAIN_MENU_SORRY_MESSAGE + STARS_LINE);
     }
 
-    public void showPositionSorryMessage(){
-        System.out.println(STARS_LINE+POSITION_SORRY_MESSAGE+STARS_LINE);
+    public void showPositionSorryMessage() {
+        System.out.println(STARS_LINE + POSITION_SORRY_MESSAGE + STARS_LINE);
     }
 
-    public void showMenuInputCountOfPosition(){
-        System.out.println(LINE+COUNT_POSITION+LINE);
+    public void showMenuInputCountOfPosition() {
+        System.out.println(LINE + COUNT_POSITION + LINE);
     }
 
 
     public int numberPointOfMenu() {
-        Scanner scanner = new Scanner(System.in);
-        String s = scanner.nextLine();
-        return Integer.parseInt(s);
+        try {
+            Scanner scanner = new Scanner(System.in);
+            String s = scanner.nextLine();
+            return Integer.parseInt(s);
+        } catch (NumberFormatException e) {
+            System.out.println("Что то явно пошло не по нашему плану.. Давайте попробуем еще раз?");
+            return -2;
+        }
     }
 
     public static String getMainMenuAdd() {
@@ -147,16 +152,26 @@ public class MainMenu {
     }
 
     public int returnIdOfPosition() {
-        Scanner scanner = new Scanner(System.in);
-        String s = scanner.nextLine();
-        return Integer.parseInt(s);
+        try {
+            Scanner scanner = new Scanner(System.in);
+            String s = scanner.nextLine();
+            return Integer.parseInt(s);
+        } catch (NumberFormatException e) {
+            System.out.println("С этим не шутят. Давайте еще раз! Введите наконец таки число!");
+            return 0;
+        }
 
 
     }
 
     public int returnCountOfPosition() {
-        Scanner scanner = new Scanner(System.in);
-        String s = scanner.nextLine();
-        return Integer.parseInt(s);
+        try {
+            Scanner scanner = new Scanner(System.in);
+            String s = scanner.nextLine();
+            return Integer.parseInt(s);
+        } catch (NumberFormatException e) {
+            System.out.println("Помните что надо вводить только число!");
+            return 0;
+        }
     }
 }

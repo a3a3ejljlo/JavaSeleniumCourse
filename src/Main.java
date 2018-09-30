@@ -1,5 +1,5 @@
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ExeptionForThisProject {
 
 /*  1) Формируется новогодний подарок.
 Он может включать в себя разные сладости (Candy, Jellybean, etc.)
@@ -17,28 +17,26 @@ public class Main {
         Set set = new Set();
         MainMenu mainMenu = new MainMenu();
         boolean isGameover = false;
-        startGame(set, mainMenu, isGameover);
+        startGameLogic(set, mainMenu, isGameover);
     }
 
 
-    private static void startGame(Set set, MainMenu mainMenu, boolean isGameover) {
+    private static void startGameLogic(Set set, MainMenu mainMenu, boolean isGameover) throws ExeptionForThisProject {
         while (!isGameover) {
             mainMenu.startGreeting();
             int menu = mainMenu.numberPointOfMenu();
-            if (menu == 1) {
+            if (menu == 1 || menu == 2) {
                 mainMenu.showLotOfPosition();
                 int id = mainMenu.returnIdOfPosition();
-                mainMenu.showMenuInputCountOfPosition();
-                int count = mainMenu.returnCountOfPosition();
-                isGameover = set.doInteractionWithPositions(menu, id, count);
-            } else if (menu == 2) {
-                mainMenu.showLotOfPosition();
-                int id = mainMenu.returnIdOfPosition();
-                mainMenu.showMenuInputCountOfPosition();
-                int count = mainMenu.returnCountOfPosition();
-                isGameover = set.doInteractionWithPositions(menu, id, count);
-            } else if (menu == 3 || menu == 4) {
-                isGameover = set.setTotal(menu);
+                if (id == 1 || id == 2 || id == 3) {
+                    mainMenu.showMenuInputCountOfPosition();
+                    int count = mainMenu.returnCountOfPosition();
+                    set.doInteractionWithPositions(menu, id, count);
+                } else{mainMenu.showPositionSorryMessage();}
+            } else if (menu == 3) {
+                set.setTotal(menu);
+            } else if (menu == 4) {
+                isGameover = set.isGameover(menu);
             } else {
                 mainMenu.showMenuSorryMessage();
             }

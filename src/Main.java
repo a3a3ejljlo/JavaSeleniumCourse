@@ -22,27 +22,32 @@ public class Main {
         startGameLogic(set, mainMenu, isGameover);
     }
 
-    private static void startGameLogic(Set set, MainMenu mainMenu, boolean isGameover) throws ExeptionForThisProject {
-        while (!isGameover) {
-            mainMenu.startGreeting();
-            int menu = mainMenu.numberPointOfMenu();
-            if (menu == 1 || menu == 2) {
-                mainMenu.showLotOfPosition();
-                int id = mainMenu.returnIdOfPosition();
-                if (id == 1 || id == 2 || id == 3) {
-                    mainMenu.showMenuInputCountOfPosition();
-                    int count = mainMenu.returnCountOfPosition();
-                    set.doInteractionWithPositions(menu, id, count);
+    private static void startGameLogic(Set set, MainMenu mainMenu, boolean isGameover){
+        try {
+            while (!isGameover) {
+                mainMenu.showMenuFromList();
+                int menu = mainMenu.numberPointOfMenu();
+                if (menu == 1 || menu == 2) {
+                    mainMenu.showPositionFromList();
+                    int id = mainMenu.returnIdOfPosition();
+                    if (id == 1 || id == 2 || id == 3) {
+                        mainMenu.showMenuInputCountOfPosition();
+                        int count = mainMenu.returnCountOfPosition();
+                        set.doInteractionWithPositions(menu, id, count);
+                    } else {
+                        mainMenu.showPositionSorryMessage();
+                    }
+                } else if (menu == 3) {
+                    set.setTotal(menu);
+                } else if (menu == 4) {
+                    isGameover = set.isGameover(menu);
                 } else {
-                    mainMenu.showPositionSorryMessage();
+                    mainMenu.showMenuSorryMessage();
                 }
-            } else if (menu == 3) {
-                set.setTotal(menu);
-            } else if (menu == 4) {
-                isGameover = set.isGameover(menu);
-            } else {
-                mainMenu.showMenuSorryMessage();
             }
+        } catch (ExeptionForThisProject exeptionForThisProject) {
+            exeptionForThisProject.printStackTrace();
+            exeptionForThisProject.getMessage();
         }
     }
 }

@@ -3,7 +3,7 @@ public class Jellybean extends Sweets{
 
     @Override
     public String returnSpecialValues() {
-        return "\nФорма желе: " + form;
+        return "Форма желе: " + form;
     }
 
     public Jellybean() {

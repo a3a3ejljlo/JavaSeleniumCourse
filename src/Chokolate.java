@@ -13,7 +13,7 @@ public class Chokolate extends Sweets {
 
     @Override
     public String returnSpecialValues() {
-        return "\nТип шоколада: " + getRandomTypes();
+        return "Тип шоколада: " + getRandomTypes();
     }
 
     public Chokolate(String name, double weight, double price) {

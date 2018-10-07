@@ -12,7 +12,7 @@ public class Candy extends Sweets {
 
     @Override
     public String returnSpecialValues() {
-        return "\nФирма производителя: " + getRandomFirm();
+        return "Фирма производителя: " + getRandomFirm();
     }
 
     public Candy(String name, double weight, double price) {

@@ -3,15 +3,16 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 public class Set {
+
     private ArrayList<Sweets> setOfSweets = new ArrayList<>();
     public HashSet<Sweets> uniqueSweets = new HashSet<>(setOfSweets);
 
-    private Chokolate chokolate = new Chokolate("Chokolate",2,100.45);
+    private Chokolate chokolate = new Chokolate("Chokolate", 2, 100.45);
     private Jellybean jellybean = new Jellybean();
-    public Candy candy = new Candy("Candy",1,4.58);
+    private Candy candy = new Candy("Candy", 1, 4.58);
     private MainMenu mainMenu = new MainMenu();
 
-    public void addCountOfPosition(int countOfPosition, Sweets sweets) throws ExeptionForThisProject {
+    private void addCountOfPosition(int countOfPosition, Sweets sweets) throws ExeptionForThisProject {
         try {
             for (int i = 0; i < countOfPosition; i++) {
                 setOfSweets.add(sweets);
@@ -23,7 +24,7 @@ public class Set {
         }
     }
 
-    public void deleteCountOfPosition(int countOfPosition, Sweets sweets) {
+    private void deleteCountOfPosition(int countOfPosition, Sweets sweets) {
         try {
             if (countOfPosition > (setOfSweets.lastIndexOf(sweets) + 1) && setOfSweets.size() != 0) {
                 System.out.println("Мы не можем удалить больше чем " + (setOfSweets.lastIndexOf(sweets) + 1) + " шт" + " " + sweets.getName());
@@ -41,7 +42,12 @@ public class Set {
         }
     }
 
-    public void doInteractionWithPositions(int menu, int id, int count) throws ExeptionForThisProject {
+    private String getSpaceInputBetweenWords(String s) {
+        String SPACE = "                                        ";
+        return new String(new char[SPACE.length() - s.length()]).replace("", " ");
+    }
+
+    void doInteractionWithPositions(int menu, int id, int count) throws ExeptionForThisProject {
         try {
             if (menu == 1) {
                 switch (id) {
@@ -89,32 +95,37 @@ public class Set {
     void setTotal(int menu) {
         try {
             if (menu == 3) {
-                StringBuilder stringBuilder;
                 double x = 0;
                 double y = 0;
                 System.out.println(
-                        MainMenu.TOTAL_OF_POSITION);
-                for (int i = 0; i < setOfSweets.size(); i++) {
-                    x += setOfSweets.get(i).getPrice();
-                    y += setOfSweets.get(i).getWeight();
-                    String aboutPositionAllInfo = "\nНазвание: " + setOfSweets.get(i).getName() + "\nВес: " +
-                            setOfSweets.get(i).getWeight() + "\nЦена: " +
-                            setOfSweets.get(i).getPrice() + setOfSweets.get(i).returnSpecialValues();
-                    stringBuilder = new StringBuilder(aboutPositionAllInfo);
-                    System.out.println(stringBuilder.toString());
+                        MainMenu.TOTAL_OF_POSITION + "\n");
+                for (int i = 0; i < setOfSweets.size(); i = i + 3) {
+                    String name1 = "Название: " + setOfSweets.get(i).getName();
+                    String name2 = "Название: " + setOfSweets.get(i + 1).getName();
+                    String name3 = "Название: " + setOfSweets.get(i + 2).getName();
+                    String weight1 = "Вес: " + setOfSweets.get(i).getWeight();
+                    String weight2 = "Вес: " + setOfSweets.get(i + 1).getWeight();
+                    String weight3 = "Вес: " + setOfSweets.get(i + 2).getWeight();
+                    String price1 = "Цена: " + setOfSweets.get(i).getPrice();
+                    String price2 = "Цена: " + setOfSweets.get(i + 1).getPrice();
+                    String price3 = "Цена: " + setOfSweets.get(i + 2).getPrice();
+                    String unique1 = setOfSweets.get(i).returnSpecialValues();
+                    String unique2 = setOfSweets.get(i + 1).returnSpecialValues();
+                    String unique3 = setOfSweets.get(i + 2).returnSpecialValues();
+
+                    System.out.println(new StringBuilder(name1 + getSpaceInputBetweenWords(name1) + name2 + getSpaceInputBetweenWords(name2) + name3));
+                    System.out.println(new StringBuilder(weight1 + getSpaceInputBetweenWords(weight1) + weight2) + getSpaceInputBetweenWords(weight2) + weight3);
+                    System.out.println(new StringBuilder(price1 + getSpaceInputBetweenWords(price1) + price2 + getSpaceInputBetweenWords(price2) + price3));
+                    System.out.println(new StringBuilder(unique1 + getSpaceInputBetweenWords(unique1) + unique2 + getSpaceInputBetweenWords(unique2) + unique3));
+                    System.out.println(MainMenu.LINE);
                 }
-                String aboutPositionWeight = "\nНабор весит " + String.format("%.2f", y) + " грамм";
-                String aboutPositionPrice = "В сумме получилось: " + String.format("%.2f", x) + " рублей";
-                stringBuilder = new StringBuilder(aboutPositionWeight + "\n" + aboutPositionPrice);
-                System.out.println(
-                        stringBuilder.toString());
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public boolean isGameover(int menu) {
+    boolean isGameover(int menu) {
         try {
             if (menu == 4) {
                 System.out.println(MainMenu.BYE_BYE_MESSAGE);

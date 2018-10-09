@@ -2,7 +2,7 @@ package jenericHomework;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//TODO в процессе осмыления
 public class Main2 {
     public static void main(String[] args) {
         JenericHomework jenericHomework = new JenericHomework();

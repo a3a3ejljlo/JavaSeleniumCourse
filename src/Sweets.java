@@ -5,6 +5,7 @@ public abstract class Sweets {
     private double price;
 
 
+
     public abstract String returnSpecialValues();
 
     public Sweets() {

@@ -11,6 +11,18 @@ public class Chokolate extends Sweets {
 
     String type = "Пористый";
 
+    String quality = "HMMMM";
+
+    @SweetAnnotation()
+    public String getQuality() {
+        return quality;
+    }
+
+    @SweetAnnotation()
+    public void setQuality(String quality) {
+        this.quality = quality;
+    }
+
     @Override
     public String returnSpecialValues() {
         return "Тип шоколада: " + getRandomTypes();

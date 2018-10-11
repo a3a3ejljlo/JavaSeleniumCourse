@@ -1,9 +1,7 @@
-package reflection;
+package lessons.reflection;
 //TODO в процессе осмысления
-import java.lang.reflect.*;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+
 import static java.lang.Class.forName;
 
 public class Main2 {
@@ -14,7 +12,7 @@ public class Main2 {
 
 
         try {
-            concreteClass = Class.forName("reflection.ConcreteClass");
+            concreteClass = Class.forName("lessons.reflection.ConcreteClass");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }

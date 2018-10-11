@@ -1,4 +1,4 @@
-package jenericHomework;
+package lessons.jenerics;
 
 import java.util.*;
 

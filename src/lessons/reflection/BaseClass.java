@@ -1,4 +1,4 @@
-package reflection;
+package lessons.reflection;
 
 public class BaseClass {
 

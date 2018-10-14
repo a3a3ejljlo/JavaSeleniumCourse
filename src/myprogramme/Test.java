@@ -1,5 +1,15 @@
 package myprogramme;
 
+
+/*
+
+Это класс для тестирования программы
+
+
+*/
+
+
+
 import myprogramme.todolist.Uniquable;
 
 import java.lang.reflect.Constructor;

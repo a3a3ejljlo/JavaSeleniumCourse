@@ -1,4 +1,7 @@
-public class Jellybean extends Sweets{
+package myprogramme;
+
+public class Jellybean extends Sweets {
+
     String form = "Квадрат";
 
     @Override

@@ -1,3 +1,5 @@
+package myprogramme;
+
 public abstract class Sweets {
     private int id;
     private String name;

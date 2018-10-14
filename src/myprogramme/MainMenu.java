@@ -1,3 +1,5 @@
+package myprogramme;
+
 import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiUnavailableException;
 import java.util.HashMap;

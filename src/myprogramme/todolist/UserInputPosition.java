@@ -1,3 +1,7 @@
+package myprogramme.todolist;
+
+import myprogramme.Sweets;
+
 import java.util.Scanner;
 
 public class UserInputPosition extends Sweets {

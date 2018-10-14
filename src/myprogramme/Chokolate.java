@@ -1,9 +1,11 @@
+package myprogramme;
+
 import java.util.Random;
 
 public class Chokolate extends Sweets {
     private String[] types = {"Горький", "Очень горький", "Молочный", "Настоящий (100%)"};
 
-    public String getRandomTypes() {
+    String getRandomTypes() {
         Random random = new Random();
         int x = random.nextInt(4);
         return types[x];
@@ -11,19 +13,8 @@ public class Chokolate extends Sweets {
 
     String type = "Пористый";
 
-    String quality = "HMMMM";
-
-    @SweetAnnotation()
-    public String getQuality() {
-        return quality;
-    }
-
-    @SweetAnnotation()
-    public void setQuality(String quality) {
-        this.quality = quality;
-    }
-
     @Override
+    @SweetAnnotation(unique = "Белый")
     public String returnSpecialValues() {
         return "Тип шоколада: " + getRandomTypes();
     }

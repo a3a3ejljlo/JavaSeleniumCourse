@@ -1,3 +1,5 @@
+package myprogramme;
+
 import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiUnavailableException;
 
@@ -5,7 +7,7 @@ public class Main {
     public static void main(String[] args) throws ExeptionForThisProject, InvalidMidiDataException, MidiUnavailableException {
 
 /*  1) Формируется новогодний подарок.
-Он может включать в себя разные сладости (Candy, Jellybean, etc.)
+Он может включать в себя разные сладости (.Candy, .Jellybean, etc.)
 У каждой сладости есть название, вес, цена и свой уникальный параметр.
 Необходимо собрать подарок из сладостей.
 Найти общий вес подарка, общую стоимость подарка
@@ -22,7 +24,7 @@ public class Main {
         startGameLogic(set, mainMenu, isGameover);
     }
 
-    private static void startGameLogic(Set set, MainMenu mainMenu, boolean isGameover){
+    private static void startGameLogic(Set set, MainMenu mainMenu, boolean isGameover) {
         try {
             while (!isGameover) {
                 mainMenu.showMenuFromList();

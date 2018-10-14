@@ -1,3 +1,5 @@
+package myprogramme;
+
 public class ExeptionForThisProject extends NumberFormatException {
 
 

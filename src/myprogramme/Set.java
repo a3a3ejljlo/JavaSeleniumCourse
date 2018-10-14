@@ -1,6 +1,8 @@
-import javax.sound.midi.Soundbank;
+package myprogramme;
+
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 public class Set {
 
@@ -43,7 +45,7 @@ public class Set {
     }
 
     private String getSpaceInputBetweenWords(String s) {
-        String SPACE = "                                        ";
+        String SPACE = "                                                              ";
         return new String(new char[SPACE.length() - s.length()]).replace("", " ");
     }
 
@@ -93,6 +95,7 @@ public class Set {
     }
 
     void setTotal(int menu) {
+        List<StringBuilder> totals = new ArrayList<>();
         try {
             if (menu == 3) {
                 double x = 0;
@@ -109,16 +112,31 @@ public class Set {
                     String price1 = "Цена: " + setOfSweets.get(i).getPrice();
                     String price2 = "Цена: " + setOfSweets.get(i + 1).getPrice();
                     String price3 = "Цена: " + setOfSweets.get(i + 2).getPrice();
-                    String unique1 = setOfSweets.get(i).returnSpecialValues();
+                    String unique1;
+                    if (setOfSweets.get(i).equals(candy)) {
+                        unique1 = "Фирма производителя: " + candy.getClass().getMethod("returnSpecialValues").getAnnotation(SweetAnnotation.class).unique();
+                    } else if (setOfSweets.get(i).equals(chokolate)) {
+                        unique1 = "Тип шоколада: " + chokolate.getClass().getMethod("returnSpecialValues").getAnnotation(SweetAnnotation.class).unique();
+                    } else {
+                        unique1 = setOfSweets.get(i).returnSpecialValues();
+                    }
                     String unique2 = setOfSweets.get(i + 1).returnSpecialValues();
                     String unique3 = setOfSweets.get(i + 2).returnSpecialValues();
+                    totals.add(new StringBuilder(name1 + getSpaceInputBetweenWords(name1) + name2 + getSpaceInputBetweenWords(name2) + name3));
+                    totals.add(new StringBuilder(weight1 + getSpaceInputBetweenWords(weight1) + weight2 + getSpaceInputBetweenWords(weight2) + weight3));
+                    totals.add(new StringBuilder(price1 + getSpaceInputBetweenWords(price1) + price2 + getSpaceInputBetweenWords(price2) + price3));
+                    totals.add(new StringBuilder(unique1 + getSpaceInputBetweenWords(unique1) + unique2 + getSpaceInputBetweenWords(unique2) + unique3));
+                    totals.add(new StringBuilder(MainMenu.LINE));
 
-                    System.out.println(new StringBuilder(name1 + getSpaceInputBetweenWords(name1) + name2 + getSpaceInputBetweenWords(name2) + name3));
-                    System.out.println(new StringBuilder(weight1 + getSpaceInputBetweenWords(weight1) + weight2) + getSpaceInputBetweenWords(weight2) + weight3);
+/*                    System.out.println(new StringBuilder(name1 + getSpaceInputBetweenWords(name1) + name2 + getSpaceInputBetweenWords(name2) + name3));
+                    System.out.println(new StringBuilder(weight1 + getSpaceInputBetweenWords(weight1) + weight2 + getSpaceInputBetweenWords(weight2) + weight3);
                     System.out.println(new StringBuilder(price1 + getSpaceInputBetweenWords(price1) + price2 + getSpaceInputBetweenWords(price2) + price3));
                     System.out.println(new StringBuilder(unique1 + getSpaceInputBetweenWords(unique1) + unique2 + getSpaceInputBetweenWords(unique2) + unique3));
-                    System.out.println(MainMenu.LINE);
+                    System.out.println(MainMenu.LINE);*/
                 }
+
+                //Использование потока для вывода в консоль
+                totals.stream().forEach(System.out::println);
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -1,10 +1,13 @@
+package myprogramme.todolist;
+
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target(value = ElementType.METHOD)
+//TODO в процессе осмысления
+@Target(value = ElementType.FIELD)
 @Retention(value = RetentionPolicy.RUNTIME)
-@interface SweetAnnotation {
-    String name = "bad";
+public @interface Uniqume {
+
 }

@@ -4,6 +4,7 @@ import javafx.scene.paint.Stop;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) throws ClassNotFoundException {
@@ -31,6 +32,7 @@ public class Main {
             }
 
             System.out.println("Start annotation - " + hasStart + "; Stop annotation - " + hasStop);
+            System.out.println(Arrays.toString(method.getAnnotations()));
         }
     }
 }

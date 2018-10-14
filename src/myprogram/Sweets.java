@@ -1,4 +1,4 @@
-package myprogramme;
+package myprogram;
 
 public abstract class Sweets {
     private int id;

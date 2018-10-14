@@ -1,4 +1,4 @@
-package myprogramme.todolist;
+package myprogram.todolist;
 
 import javax.sound.midi.*;
 

@@ -1,13 +1,12 @@
-package myprogramme.todolist;
+package myprogram;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-//TODO в процессе осмысления
-@Target(value = ElementType.FIELD)
+@Target(value = ElementType.METHOD)
 @Retention(value = RetentionPolicy.RUNTIME)
-public @interface Uniqume {
-
+@interface SweetAnnotation {
+    String unique();
 }

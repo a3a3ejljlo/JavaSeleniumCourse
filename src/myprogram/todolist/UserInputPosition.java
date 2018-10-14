@@ -1,6 +1,6 @@
-package myprogramme.todolist;
+package myprogram.todolist;
 
-import myprogramme.Sweets;
+import myprogram.Sweets;
 
 import java.util.Scanner;
 

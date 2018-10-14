@@ -1,4 +1,4 @@
-package myprogramme;
+package myprogram;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -102,6 +102,8 @@ public class Set {
                 double y = 0;
                 System.out.println(
                         MainMenu.TOTAL_OF_POSITION + "\n");
+                //TODO как исправить здесь ошибку? когда у нас сладостей к примеру добавилось 25 штуки
+                // TODO(12 конфет+13 шоколадок), то мы делаем i+3 и выходим за границы массива
                 for (int i = 0; i < setOfSweets.size(); i = i + 3) {
                     String name1 = "Название: " + setOfSweets.get(i).getName();
                     String name2 = "Название: " + setOfSweets.get(i + 1).getName();

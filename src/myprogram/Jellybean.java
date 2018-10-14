@@ -1,4 +1,4 @@
-package myprogramme;
+package myprogram;
 
 public class Jellybean extends Sweets {
 

@@ -1,6 +1,6 @@
-package myprogramme.todolist;
+package myprogram.todolist;
 
-import myprogramme.MainMenu;
+import myprogram.MainMenu;
 
 import javax.swing.*;
 

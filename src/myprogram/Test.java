@@ -1,4 +1,4 @@
-package myprogramme;
+package myprogram;
 
 
 /*
@@ -10,11 +10,7 @@ package myprogramme;
 
 
 
-import myprogramme.todolist.Uniquable;
-
-import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 
 public class Test {
 

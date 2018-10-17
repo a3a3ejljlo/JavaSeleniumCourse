@@ -9,7 +9,12 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.HashMap;
@@ -58,5 +63,11 @@ public class Main {
 
         doc.getDocumentElement().normalize();
         return doc;
+    }
+
+    public static void saveXML(Document document) throws TransformerException, FileNotFoundException {
+        Transformer transformer = TransformerFactory.newInstance().newTransformer();
+        transformer.setOutputProperty((OutputKeys.METHOD), "xml");
+        transformer.transform(new DOMSource(document), new StreamResult((new FileOutputStream("C://Users/ruadoah/JavaSeleniumCourse/src/lessons/xmlfiles/1.xml"))));
     }
 }

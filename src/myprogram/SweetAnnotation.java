@@ -9,4 +9,5 @@ import java.lang.annotation.Target;
 @Retention(value = RetentionPolicy.RUNTIME)
 @interface SweetAnnotation {
     String unique();
+//    Тест
 }

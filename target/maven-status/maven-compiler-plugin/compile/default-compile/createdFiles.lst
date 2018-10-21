@@ -16,6 +16,7 @@ myprogram\Test.class
 lessons\annotation\StartObject.class
 lessons\reflection\Main4.class
 lessons\reflection\MainSetAndGetValueFOrField.class
+homework\xml\Main.class
 lessons\reflection\MainConstructor.class
 myprogram\MainMenu$1.class
 myprogram\todolist\Uniqume.class
@@ -38,6 +39,7 @@ lessons\annotation\ControlledObject.class
 lessons\reflection\ConcreteClass$ConcreteClassPrivateClass.class
 lessons\reflection\ConcreteClass$ConcreteClassDefaultEnum.class
 lessons\reflection\ConcreteClass$ConcreteClassProtectedClass.class
+lessons\webservices\Main.class
 lessons\annotation\Meta.class
 lessons\reflection\MainWorkWithMethods.class
 myprogram\Candy.class

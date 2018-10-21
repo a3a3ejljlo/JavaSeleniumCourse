@@ -9,7 +9,7 @@
         <module name="JavaSeleniumCourse" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="10">
       <module name="JavaSeleniumCourse" target="1.8" />
     </bytecodeTargetLevel>
   </component>
